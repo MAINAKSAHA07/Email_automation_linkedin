@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables file
+.env
+*.env
+
+# Logs and local output
+*.log
+logs/
+output/
+*.sqlite3
+*.db
+
+# VSCode settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Jupyter Notebook checkpoints (if you ever use notebooks)
+.ipynb_checkpoints/
+
+# Python egg info
+*.egg-info/
+dist/
+build/
+
+# Cache files
+.cache/
+*.bak
+
+# Node (if you ever add a frontend)
+node_modules/
+
+# Streamlit or Flask cache
+.streamlit/
+instance/
+
+# Pycharm project files
+.idea/
+
+# Redis dump files
+dump.rdb
+appendonly.aof

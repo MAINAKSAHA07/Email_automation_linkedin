@@ -1,0 +1,31 @@
+# Core dependencies
+selenium==4.18.1
+beautifulsoup4==4.12.3
+requests==2.31.0
+python-dotenv==1.0.1
+
+# Database
+pymongo==4.6.1
+motor==3.3.2
+
+# Task scheduling
+celery==5.3.6
+redis==5.0.1
+
+# Web framework
+fastapi==0.110.0
+uvicorn==0.27.1
+streamlit==1.32.0
+
+# Utilities
+python-jose==3.3.0
+passlib==1.7.4
+python-multipart==0.0.9
+pydantic==2.6.3
+
+# Scraping utilities
+undetected-chromedriver==3.5.5
+playwright==1.42.0
+
+# API clients
+pyhunter==1.7 
