@@ -11,10 +11,28 @@ from database.mongo_operations import MongoDB
 
 load_dotenv()
 
-# Initialize Celery
+# Initialize Celery with Redis configuration
 celery_app = Celery('recruiter_bot',
                     broker=os.getenv('REDIS_URL', 'redis://localhost:6379/0'),
-                    backend=os.getenv('REDIS_URL', 'redis://localhost:6379/0'))
+                    backend=os.getenv('REDIS_URL', 'redis://localhost:6379/0'),
+                    broker_transport_options={
+                        'visibility_timeout': 43200,  # 12 hours
+                        'fanout_prefix': True,
+                        'fanout_patterns': True
+                    })
+
+# Celery configuration
+celery_app.conf.update(
+    task_serializer='json',
+    accept_content=['json'],
+    result_serializer='json',
+    timezone='UTC',
+    enable_utc=True,
+    task_track_started=True,
+    task_time_limit=3600,  # 1 hour
+    worker_max_tasks_per_child=100,
+    worker_prefetch_multiplier=1
+)
 
 # Initialize components
 db = MongoDB()
